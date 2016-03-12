@@ -1,0 +1,25 @@
+<article class="component">
+  <header class="component__header">
+    <h3 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h3>
+      {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %}
+      {% if entry.module %}<p><strong>Include partial:</strong> <a href="{{ site.owner.github-repo }}{{ entry.module }}">{{ entry.module }}</a></p>{% endif %}
+      {% if entry.scss %}<p class="entry--last"><strong>SCSS partial:</strong> <a href="{{ site.owner.github-repo }}{{ entry.scss }}">{{ entry.scss }}</a></p>{% endif %}
+  </header>
+
+  <ul class="component__content accordion-tabs-minimal">
+    <li class="tab-header-and-content component__rendered">
+      <a href="#" class="tab-link is-active">Preview</a>
+      <div class="tab-content">
+        {{ entry.content }}
+      </div>
+    </li>
+    <li class="tab-header-and-content component__code">
+      <a href="#" class="tab-link">Markup</a>
+      <div class="tab-content">
+        {% highlight html %}
+          {{ entry.content }}
+        {% endhighlight %}
+      </div>
+    </li>
+  </ul>
+</article>

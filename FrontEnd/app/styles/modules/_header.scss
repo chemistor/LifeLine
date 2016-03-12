@@ -1,0 +1,16 @@
+.header {
+  padding:2em 0 4em;
+}
+
+.header__logo {
+  float: left;
+}
+
+.header__nav {
+  float: right;
+}
+
+.header__nav__item {
+  display: inline;
+  padding: 0 .3em;
+} 

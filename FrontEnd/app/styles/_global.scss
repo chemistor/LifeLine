@@ -1,0 +1,13 @@
+body {
+  color: $medium-gray;
+}
+
+.header,
+.main {
+  @include outer-container;
+}
+
+// Globals
+.outer-container {
+  @include outer-container;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include shared/styles.html %}
+
+    <!-- build:js /scripts/modernizr.js -->
+      <script src="/vendor/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+
+  <body class="{{ page.body_class }}">
+    <header class="header">
+      <h1 class="header__logo"><a href="/">LifeLine</a></h1>
+      <nav class="header__nav">
+        {% include components/nav/main-nav.html class="header__nav__item" %}
+      </nav>
+    </header>
+
+    <main class="main">
+      {{ content }}
+    </main>
+
+    <footer class="footer">
+      <div class="outer-container">
+        <nav class="footer__nav">
+          {% include components/nav/main-nav.html class="footer__nav__item" %}
+        </nav>
+      </div>
+    </footer>
+
+    {% if page.body_class == 'styleguide' %}{% include shared/styleguide-scripts.html %}{% else %}{% include shared/scripts.html %}{% endif %}
+  </body>
+</html>
